@@ -353,7 +353,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { getMovies, setTotalResults, setLoading, setError } from "../redux/movieSlice";
 import { useLocation, useNavigate } from "react-router-dom";
-import "./MovieList.css"; // Import the CSS file for styling
+import "./MovieList.css"; 
 import debounce from "lodash.debounce";
 
 interface Movie {
@@ -374,7 +374,7 @@ const MovieList: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const OMDB_API_KEY = "d935aee9"; // Replace with your OMDB API key
+  const OMDB_API_KEY = "d935aee9"; 
 
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
@@ -394,7 +394,7 @@ const MovieList: React.FC = () => {
       dispatch(getMovies([]));
       dispatch(setTotalResults(0));
       dispatch(setError(null));
-      return; // If search is empty, don't make API call
+      return; 
     }
 
     dispatch(setLoading(true));
@@ -406,11 +406,11 @@ const MovieList: React.FC = () => {
       if (response.data.Response === "True") {
         dispatch(getMovies(response.data.Search));
         dispatch(setTotalResults(Number(response.data.totalResults)));
-        dispatch(setError(null));  // Clear any previous error
+        dispatch(setError(null));  
       } else {
         dispatch(setError(response.data.Error || "No results found."));
-        dispatch(getMovies([]));  // Clear movies if no results found
-        dispatch(setTotalResults(0)); // Set total results to 0
+        dispatch(getMovies([]));  
+        dispatch(setTotalResults(0)); 
       }
     } catch (error) {
       dispatch(setError("Failed to fetch movies. Please try again."));
@@ -419,18 +419,18 @@ const MovieList: React.FC = () => {
     }
   };
 
-  // Debounced search function
+  
   const debouncedSearch = useCallback(
     debounce((value: string) => {
       if (!value.trim()) {
-        dispatch(getMovies([])); // Clear movies if search is cleared
+        dispatch(getMovies([])); 
         dispatch(setTotalResults(0));
         dispatch(setError(null));
       } else {
         navigate(`/?s=${value}&p=1&type=${typeFilter}`);
         fetchMovies(value, 1, typeFilter);
       }
-    }, 500), // 500ms delay before search is triggered
+    }, 500), 
     [typeFilter, navigate]
   );
 
@@ -446,7 +446,7 @@ const MovieList: React.FC = () => {
 
   const handleTypeChange = (newType: string) => {
     setTypeFilter(newType);
-    dispatch(setError(null));  // Clear error state when changing filters
+    dispatch(setError(null));  
     navigate(`/?s=${searchTerm}&p=1&type=${newType}`);
     fetchMovies(searchTerm, 1, newType);
   };
@@ -458,7 +458,7 @@ const MovieList: React.FC = () => {
         <input
           type="text"
           value={searchTerm}
-          onChange={handleSearchChange}  // Update search term dynamically
+          onChange={handleSearchChange}  //2-way
           placeholder="Search movies..."
         />
         <div className="filter-buttons">
