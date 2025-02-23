@@ -1,0 +1,72 @@
+
+
+.filter-buttons {
+    margin-top: 20px;
+  }
+  
+  .filter-buttons button {
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    cursor: pointer;
+  }
+  
+  .filter-buttons button.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+  }
+  
+  
+  .movie-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  
+  .movie-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .movie-poster {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .movie-info {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .myDiv{
+      width: 90%; 
+      height: 20px; 
+      background-color: #3498db; 
+      color: white; 
+      border-radius: 10px; 
+      padding: 20px; 
+      margin: 20px; 
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+      text-align: center; 
+      font-family: Arial, sans-serif; 
+    }
+
+    .myDiv1{
+      width: 50%; 
+      height: 20px; 
+      background-color: #056823; 
+      color: white; 
+      border-radius: 10px; 
+      padding: 20px; 
+      margin: 20px; 
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+      text-align: center; 
+      font-family: Arial, sans-serif; 
+    }
+    
