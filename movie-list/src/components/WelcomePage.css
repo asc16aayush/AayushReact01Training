@@ -1,0 +1,17 @@
+
+.welcome-page {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .welcome-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .welcome-page p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  

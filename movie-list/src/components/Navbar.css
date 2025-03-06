@@ -1,0 +1,28 @@
+
+.navbar {
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar ul {
+    display: flex;
+    list-style-type: none;
+  }
+  
+  .navbar ul li {
+    margin: 0 15px;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+  
